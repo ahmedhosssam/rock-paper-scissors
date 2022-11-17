@@ -24,57 +24,42 @@ const getComputerChoice = () => {
 let playerScore = 0;
 let ComputerScore = 0;
 
-// Get All Elements We Need :
-const rock = document.getElementById('rock');
-const paper = document.getElementById('paper');
-const scissors = document.getElementById('scissors');
-const playerScorePara = document.getElementById('playerScore');
-const computerScorePara = document.getElementById('computerScore');
-
 const play = (playerSelection) => {
   const computerSelection = getComputerChoice();
+  const winner = `You Win! ${playerSelection.toLowerCase()} beats ${computerSelection.toLowerCase()}`;
+  const loser = `You Lose! ${computerSelection.toLowerCase()} beats ${playerSelection.toLowerCase()}`;
 
-  if (playerSelection.id == 'rock') {
+  if (playerSelection.toLowerCase() == 'rock') {
     if (computerSelection.toLowerCase() == 'scissors') {
       playerScore++;
-      playerScorePara.textContent = `Player : ${playerScore}`;
-      console.log('winner');
+      console.log(winner);
     } else if (computerSelection.toLowerCase() == 'paper') {
       ComputerScore++;
-      computerScorePara.textContent = `Computer : ${ComputerScore}`;
-      console.log('loser');
+      console.log(loser);
     } else if (computerSelection.toLowerCase() == 'rock') {
       console.log('Draw!');
     }
-  } else if (playerSelection.id == 'paper') {
+  } else if (playerSelection.toLowerCase() == 'paper') {
     if (computerSelection.toLowerCase() == 'scissors') {
       ComputerScore++;
-      computerScorePara.textContent = `Computer : ${ComputerScore}`;
-      console.log('loser');
+      console.log(loser);
     } else if (computerSelection.toLowerCase() == 'paper') {
       console.log(`Draw!`);
     } else if (computerSelection.toLowerCase() == 'rock') {
       playerScore++;
-      playerScorePara.textContent = `Player : ${playerScore}`;
-      console.log('winner');
+      console.log(winner);
     }
-  } else if (playerSelection.id == 'scissors') {
+  } else if (playerSelection.toLowerCase() == 'scissors') {
     if (computerSelection.toLowerCase() == 'scissors') {
       console.log(`Draw!`);
     } else if (computerSelection.toLowerCase() == 'paper') {
       playerScore++;
-      playerScorePara.textContent = `Player : ${playerScore}`;
-      console.log('winner');
+      console.log(winner);
     } else if (computerSelection.toLowerCase() == 'rock') {
       ComputerScore++;
-      computerScorePara.textContent = `Computer : ${ComputerScore}`;
-      console.log('loser');
+      console.log(loser);
     }
   }
 };
 
 const choicesHTML = document.querySelectorAll('.choice');
-
-rock.addEventListener('click', (e) => play(e.target));
-paper.addEventListener('click', (e) => play(e.target));
-scissors.addEventListener('click', (e) => play(e.target));

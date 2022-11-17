@@ -43,9 +43,6 @@ header h1 {
 
 .result {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: rgb(50, 57, 70);
   border-radius: 15px;
 }
@@ -62,21 +59,23 @@ header h1 {
   gap: 50px;
 }
 
-.choices button {
+.choices div {
   background-color: rgb(50, 57, 70);
   border-radius: 15px;
   padding: 20px;
   cursor: pointer;
-  font-size: 60px;
-  border: 0;
 }
 
-.choices button:hover {
+.choices div:hover {
   background-color: rgb(81, 92, 113);
 }
 
-.choices button:active {
+.choices div:active {
   background-color: rgb(50, 57, 70);
+}
+
+.choices img {
+  max-width: 120px;
 }
 
 footer {
