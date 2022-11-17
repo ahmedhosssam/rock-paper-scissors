@@ -62,9 +62,4 @@ const play = (playerSelection) => {
   }
 };
 
-for (let i = 0; i <= 5; i++) {
-  let choice = prompt('Rock , Paper , Scissors ?');
-  console.log(play(choice));
-}
-
 console.log(`Result : Player ${playerScore} - ${ComputerScore} Computer`);
