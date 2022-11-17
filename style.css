@@ -43,11 +43,23 @@ header h1 {
 
 .result {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+}
+
+.result-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(50, 57, 70);
   border-radius: 15px;
+}
+
+.result-sec p:first-child {
+  font-size: 70px;
+  margin: 0;
 }
 
 .result p {
